@@ -9,10 +9,12 @@ public class Frame extends JFrame {
     oneOrganism orgField[][];
     public String[] map;
     public GraphPanel graph;
+    public changeState decide;
     Frame(){
         setAll();
         init();
         graph = new GraphPanel(orgField);
+        decide = new changeState(orgField, orgField[0].length, orgField.length);
         add(graph, BorderLayout.CENTER);
 
     }
