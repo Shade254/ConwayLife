@@ -9,6 +9,10 @@ public class GraphPanel extends JPanel {
     GraphPanel(oneOrganism[][] field){
         map = field;
     }
+    public void set(oneOrganism[][] field){
+        map = field;
+        repaint();
+    }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         for(int i = 0;i<map.length;i++){
@@ -20,10 +24,9 @@ public class GraphPanel extends JPanel {
                 else{
                     g.setColor(Color.BLACK);
                 }
-                g.fillRect(10+x*50, 10+i*50, 50, 50);
-                System.out.println((10+i*50));
+                g.fillRect(10+x*30, 10+i*30, 30, 30);
                 g.setColor(Color.GREEN);
-                g.drawRect(10+x*50, 10+i*50, 50, 50);
+                g.drawRect(10+x*30, 10+i*30, 30, 30);
             }
         }
 

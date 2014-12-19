@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
+
 /**
  * Created by slava on 15.12.14.
  */
@@ -8,22 +9,20 @@ public class Frame extends JFrame {
     LoadMaze load = new LoadMaze();
     oneOrganism orgField[][];
     public String[] map;
-    public GraphPanel graph;
-    public changeState decide;
+    public BossCls head;
+
     Frame(){
         setAll();
         init();
-        graph = new GraphPanel(orgField);
-        decide = new changeState(orgField, orgField[0].length, orgField.length);
-        add(graph, BorderLayout.CENTER);
+        head = new BossCls(orgField);
+        add(head.graph, BorderLayout.CENTER);
+        head.goodTiming();
 
     }
     public void init(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(orgField[0].length*50+20, (orgField.length*50+50));
-        System.out.println(orgField.length + ":" + (orgField.length*50+20));
+        setSize(orgField[0].length*30+20, (orgField.length*30+50));
         setResizable(false);
-
         setVisible(true);
     }
     public void setAll(){
